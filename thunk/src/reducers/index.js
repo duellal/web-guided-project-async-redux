@@ -28,13 +28,13 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         person: action.payload,
-        fetching: false
+        isFetching: false
       }
     case FETCH_FAIL:
       return {
         ...state,
         error: action.payload,
-        fetching: false
+        isFetching: false
       }
     default:
       return state;

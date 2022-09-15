@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchStart, fetchFail, fetchSuccess } from '../actions';
+import { fetchPerson } from '../actions';
 
 const Person = (props) => {
-
   const { person, isFetching, error } = props
 
+  useEffect(() => {
+    props.fetchPerson()
+  }, [])
+
   const handleClick = () => {
-    props.dispatch(fetchStart())
+    props.fetchPerson()
   }
 
   if (error) {
@@ -37,4 +40,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Person);
+export default connect(mapStateToProps, { fetchPerson })(Person);
