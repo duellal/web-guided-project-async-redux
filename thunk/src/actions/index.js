@@ -20,7 +20,6 @@ export const fetchPerson = () => {
    return dispatch => {
       dispatch({ type: FETCH_START })
 
-      dispatch({ type: FETCH_START })
       axios.get('https://randomuser.me/api')
          .then(res => {
             dispatch({ type: FETCH_SUCCESSFUL, payload: res.data.results[0] })
