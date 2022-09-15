@@ -29,3 +29,16 @@ export const fetchPerson = () => {
          })
    }
 }
+
+//can also be written as:
+// export const fetchPerson = () => dispatch => {
+//    dispatch({ type: FETCH_START })
+
+//    axios.get('https://randomuser.me/api')
+//       .then(res => {
+//          dispatch({ type: FETCH_SUCCESSFUL, payload: res.data.results[0] })
+//       })
+//       .catch(err => {
+//          dispatch({ type: FETCH_FAIL, payload: err })
+//       })
+// }
